@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamsy Ismail</title>
+    <!-- Using a nice font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #004dc9; /* Modern Blue */
+            --bg-color: #425b82;
+            --card-bg: #17253b;
+            --text-color: #2167d9;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            width: 90%;
+            max-width: 800px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Profile Image Styling */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover; /* Ensures photo doesn't stretch */
+            border-radius: 50%; /* Makes it circular */
+            border: 4px solid var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+            color: #519aff;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .bio {
+            line-height: 1.8;
+            color: #d650ff;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .skills {
+            margin: 20px 0;
+        }
+
+        .tag {
+            background-color: #e0e7ff;
+            color: #3730a3;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin: 0 5px;
+            display: inline-block;
+        }
+
+        /* Contact Section Styling */
+        .contact-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        /* The Email Button Styling */
+        .email-btn {
+            display: inline-block;
+            background-color: #ea4335; /* Gmail Red */
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-bottom: 15px;
+        }
+
+        .email-btn:hover {
+            background-color: #c5221f;
+        }
+
+        .phone {
+            font-weight: bold;
+            color: #555;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .container { padding: 20px; width: 95%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="chamsyismail.jpg" onerror="this.src='https://via.placeholder.com/150'" alt="Chamsy Ismail" class="profile-img">
+
+        <h1>Chamsy Ismail</h1>
+        <div class="subtitle">Cloud, IoT & DevOps Engineering Student</div>
+        
+        <p class="bio">
+            I am currently pursuing my engineering degree at <strong>INPT Rabat</strong>. 
+            With a rigorous background in Mathematics and Physics (CPGE), I have transitioned into specializing in Cloud Computing and DevOps. 
+            I am passionate about building scalable infrastructure and exploring the Internet of Things.
+        </p>
+
+        <!-- Added a small skills section for extra professionalism -->
+        <div class="skills">
+            <span class="tag">Cloud Computing</span>
+            <span class="tag">DevOps</span>
+            <span class="tag">IoT</span>
+            <span class="tag">Linux</span>
+        </div>
+
+        <div class="contact-section">
+            <h2>Let's Connect</h2>
+            <p>Feel free to explore my projects or reach out for opportunities.</p>
+            
+            <!-- Your specific Gmail Link styled as a button -->
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ischamsy@gmail.com" target="_blank" class="email-btn">
+                Send me an Email
+            </a>
+            
+            <span class="phone">📞 +212 693799910</span>
+        </div>
+    </div>
+
+</body>
+</html>
