@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamsy Ismail | Cloud & DevOps</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #0c3763;
+            --card-bg: #23003a;
+            --text-color: #ec0404;
+            --text-light: #238861;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        /* --- CARD STYLES --- */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 30px;
+            overflow: hidden;
+        }
+
+        /* --- PROFILE SECTION --- */
+        .profile-header {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            margin-bottom: 20px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            margin: 0;
+            color: #00e93a;
+            font-size: 2.2rem;
+        }
+
+        .subtitle {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        .bio {
+            line-height: 1.8;
+            color: var(--text-light);
+            margin: 20px auto;
+            max-width: 700px;
+        }
+
+        .skills-container {
+            margin-top: 20px;
+        }
+
+        .tag {
+            background-color: #91a8f3;
+            color: #3730a3;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 5px;
+            display: inline-block;
+        }
+
+        /* --- SECTION HEADERS --- */
+        h2 {
+            color: #3161ca;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* --- EDUCATION SECTION (Timeline Style) --- */
+        .education-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            border-radius: 12px;
+            transition: background-color 0.3s;
+        }
+
+        .education-item:hover {
+            background-color: #f9fafb;
+        }
+
+        .logo-box {
+            width: 80px;
+            height: 80px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 12px;
+            padding: 5px;
+            border: 1px solid #eee;
+            margin-right: 20px;
+        }
+
+        .logo-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .edu-details h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.1rem;
+            color: #9e3131;
+        }
+
+        .edu-institution {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .edu-date {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* --- CERTIFICATES GRID --- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .cert-card {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            background: #fff;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--primary-color);
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background-color: var(--primary-color);
+        }
+
+        .cert-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .cert-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .cert-issuer {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .cert-date {
+            font-size: 0.8rem;
+            color: #9ca3af;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* --- CONTACT --- */
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #ea4335;
+            color: white;
+            padding: 12px 28px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-top: 15px;
+        }
+
+        .contact-btn:hover {
+            background-color: #c5221f;
+            transform: scale(1.02);
+        }
+
+        .contact-section {
+            text-align: center;
+        }
+
+        /* Mobile Tweaks */
+        @media (max-width: 600px) {
+            .education-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            .logo-box {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <!-- 1. PROFILE HEADER -->
+        <div class="card profile-header">
+            <img src="chamsyismail.jpg" onerror="this.src='https://via.placeholder.com/150'" alt="Chamsy Ismail" class="profile-img">
+            <h1>Chamsy Ismail</h1>
+            <div class="subtitle">Cloud, IoT & DevOps Engineering Student</div>
+            
+            <p class="bio">
+                I am currently pursuing my engineering degree at <strong>INPT Rabat</strong>. 
+                With a rigorous background in Mathematics and Physics (CPGE), I have transitioned into specializing in Cloud Computing and DevOps. 
+                I am passionate about building scalable infrastructure and exploring the Internet of Things.
+            </p>
+
+            <div class="skills-container">
+                <span class="tag">Cloud Computing</span>
+                <span class="tag">DevOps</span>
+                <span class="tag">IoT</span>
+                <span class="tag">Linux</span>
+                <span class="tag">Python</span>
+            </div>
+        </div>
+
+        <!-- 2. EDUCATION SECTION -->
+        <div class="card">
+            <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+            
+            <!-- INPT -->
+            <div class="education-item">
+                <div class="logo-box">
+                    <img src="inpt_logo.png" onerror="this.style.display='none'" alt="INPT Logo">
+                </div>
+                <div class="edu-details">
+                    <h3>Cloud & IoT Engineering</h3>
+                    <span class="edu-institution">INPT Rabat</span>
+                    <div class="edu-date">2023 - Present</div>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">
+                        Specializing in DevOps methodologies, Cloud Infrastructure, and IoT systems.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CPGE -->
+            <div class="education-item">
+                <div class="logo-box">
+                    <img src="cpge_logo.png" onerror="this.style.display='none'" alt="CPGE Logo">
+                </div>
+                <div class="edu-details">
+                    <h3>Preparatory Classes (MPSI/MP)</h3>
+                    <span class="edu-institution">CPGE - Classes Préparatoires</span>
+                    <div class="edu-date">2021 - 2023</div>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">
+                        Intensive training in Advanced Mathematics and Physics. Passed national competitive exams (CNC) for engineering school admission.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. CERTIFICATIONS SECTION -->
+        <div class="card">
+            <h2><i class="fas fa-certificate"></i> Certifications</h2>
+            <div class="cert-grid">
+                
+                <!-- Certificate 1 -->
+                <div class="cert-card">
+                    <i class="fab fa-html5 cert-icon"></i>
+                    <span class="cert-title">HTML, CSS, and Javascript for Web Developers</span>
+                    <span class="cert-issuer">Johns Hopkins University (Coursera)</span>
+                    <span class="cert-date">Issued: Nov 2025</span>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="cert-card">
+                    <i class="fab fa-github cert-icon" style="color: #171515;"></i>
+                    <span class="cert-title">GitHub Foundations</span>
+                    <span class="cert-issuer">DataCamp</span>
+                    <span class="cert-date">Issued: Nov 2025</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 4. CONTACT SECTION -->
+        <div class="card contact-section">
+            <h2>Let's Connect</h2>
+            <p>Open for internship opportunities and collaborations.</p>
+            
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ischamsy@gmail.com" target="_blank" class="contact-btn">
+                <i class="fas fa-envelope"></i> Send me an Email
+            </a>
+            
+            <p style="margin-top: 15px; font-weight: 600; color: #555;">
+                📞 +212 69 37 99 10
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
